@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>pylon_instant_camera_ros1</name>
+  <version>1.0.0</version>
+  <description>ROS1 Access to Basler camera via Pylon CBaslerUniversalInstantCamera API. Supports high-performance, arbitrary framerate, free-running mode.</description>
+  <maintainer email="rocueto1@fel.cvut.cz">Tomas Roucek</maintainer>
+  <license>MIT</license>
+  <url type="repository">https://github.com/rouceto1/pylon_usb-instant-camera-ros1</url>
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>roscpp</depend>
+  <depend>nodelet</depend>
+  <depend>image_transport</depend>
+  <depend>sensor_msgs</depend>
+  <depend>camera_calibration_parsers</depend>
+  <export>
+    <nodelet plugin="${prefix}/pylon_instant_camera_ros1.xml"/>
+  </export>
+</package>

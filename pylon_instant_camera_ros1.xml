@@ -1,0 +1,7 @@
+<library path="lib/libpylon_instant_camera_ros1">
+    <class name="pylon_instant_camera_ros1/PylonCameraNode" type="pylon_instant_camera_ros1::PylonCameraNode" base_class_type="nodelet::Nodelet">
+        <description>
+            Pylon fast??
+        </description>
+    </class>
+</library>

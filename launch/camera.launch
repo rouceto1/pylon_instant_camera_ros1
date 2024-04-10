@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<launch>
+        <arg name="frame_id" default="cam"/>
+        <arg name="camera_info_yaml"  default="$(find pylon_instant_camera_ros1)/config/info.yaml"/>
+        <arg name="full_name" default="" doc="Used only for USB cameras, empty for ethrnet"/>
+        <arg name="user_defined_name" default="" doc="Used only for USB cameras, empty for ethrnet"/>
+        <arg name="ip_address" default="192.168.12.1" doc="Used only for ethrnet cameras, empty for USB"/>
+        <arg name="serial_number"  default="40113566" />
+        <arg name="camera_settings_path" default="$(find pylon_instant_camera_ros1)/config/sample.pfs" doc="Saved directly from pylon"/>
+        <arg name="grab_timeout"  default="30" doc="Should be 1/set framerate"/>
+        
+        
+<node pkg="nodelet" type="nodelet" name="camera_nodelet"  args="manager"/>
+
+  <node pkg="nodelet" type="nodelet" name="node2" args="load pylon_instant_camera_ros1/PylonCameraNode camera_nodelet">
+        <param name="frame_id" type="string" value="$(arg frame_id)"/>
+        <param name="camera_info_yaml" type="string" value="$(arg camera_info_yaml)"/>
+        <param name="full_name" type="string" value="$(arg full_name)"/>
+        <param name="user_defined_name" type="string" value="$(arg user_defined_name)"/>
+        <param name="ip_address" type="string" value="$(arg ip_address)"/>
+        <param name="serial_number" type="int" value="$(arg serial_number)"/>
+        <param name="camera_settings_path" type="string" value="$(arg camera_settings_path)"/>
+        <param name="grab_timeout" type="int" value="$(arg grab_timeout)"/>
+  </node>
+  
+</launch>
