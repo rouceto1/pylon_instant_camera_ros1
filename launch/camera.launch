@@ -12,7 +12,7 @@
         
 <node pkg="nodelet" type="nodelet" name="camera_nodelet"  args="manager"/>
 
-  <node pkg="nodelet" type="nodelet" name="node2" args="load pylon_instant_camera_ros1/PylonCameraNode camera_nodelet">
+  <node pkg="nodelet" type="nodelet" name="node_$(arg serial_number)" args="load pylon_instant_camera_ros1/PylonCameraNode camera_nodelet">
         <param name="frame_id" type="string" value="$(arg frame_id)"/>
         <param name="camera_info_yaml" type="string" value="$(arg camera_info_yaml)"/>
         <param name="full_name" type="string" value="$(arg full_name)"/>

@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <launch>
         
-	<node pkg="nodelet" type="nodelet" name="camera_nodelet"  args="manager"/>		
 	<include file="$(find pylon_instant_camera_ros1)/launch/camera.launch">
 		<arg name="ip_address" value="192.168.12.1"/>
 	</include>
