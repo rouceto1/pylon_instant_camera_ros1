@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="common_settings_path" default="$(find pylon_instant_camera_ros1)/config/remote_trigger.pfs"/>
+
+	<group ns="cam1">
+		<include file="$(find pylon_instant_camera_ros1)/launch/camera.launch">
+			<arg name="ip_address" value="192.168.12.1"/>
+			<arg name="camera_settings_path" default="$(arg common_settings_path)"/>
+			<arg name="serial_number" value="1"/>
+		</include>
+	</group>
+	<group ns="cam2">
+		<include file="$(find pylon_instant_camera_ros1)/launch/camera.launch">
+			<arg name="ip_address" value="192.168.12.2"/>
+			<arg name="camera_settings_path" default="$(arg common_settings_path)"/>
+			<arg name="serial_number" value="2"/>
+		</include>
+	</group>
+
+	<group ns="cam3">
+		<include file="$(find pylon_instant_camera_ros1)/launch/camera.launch">
+			<arg name="ip_address" value="192.168.12.3"/>
+			<arg name="camera_settings_path" default="$(arg common_settings_path)"/>
+			<arg name="serial_number" value="3"/>
+		</include>
+	</group>
+
+	<group ns="cam4">
+		<include file="$(find pylon_instant_camera_ros1)/launch/camera.launch">
+			<arg name="ip_address" value="192.168.12.4"/>
+			<arg name="camera_settings_path" default="$(arg common_settings_path)"/>
+			<arg name="serial_number" value="4"/>
+		</include>
+	</group>
+  
+</launch>
